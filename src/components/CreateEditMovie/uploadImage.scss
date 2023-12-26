@@ -1,0 +1,158 @@
+.movies {
+    .heading {
+        margin-bottom: 30px;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 56px
+    }
+
+    .fields-container {
+
+        .dropbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            width: 100%;
+            max-width: 470px;
+            min-height: 400px;
+            height: 504px;
+
+            .dropzone {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 24px 0px;
+                gap: 16px;
+                border: 1px dashed grey;
+                border-radius: 8px;
+                width: 100%;
+                text-align: center;
+                height: 100%;
+
+
+
+                .file-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: center;
+                    max-width: 100%;
+                    max-height: 100%;
+
+                    .uploaded-image {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+
+                    .error-filename {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: grey;
+                    }
+                    .helper {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: grey;
+                    }
+                }
+
+                .content-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0px;
+                    gap: 8px;
+
+                    .download-icon {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .content {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        letter-spacing: 0.15px;
+                        color: #fff;
+                        margin: unset;
+                    }
+                }
+            }
+
+            .dropzone.active {
+                background: lightblue;
+                border: 1px dashed blue;
+
+                .content {
+                    color: #093545 !important;
+                }
+
+                .content-wrapper img {
+                    filter: invert(1);
+                }
+            }
+
+            .dropzone.error {
+                background: white;
+                border: 1.5px solid red;
+            }
+
+            .dropzone.success {
+                border: 1.5px solid green;
+            }
+
+        }
+
+        .right-parent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .right-fields {
+            width: 100%;
+            max-width: 365px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .year-field {
+                width: 215px;
+            }
+
+            .button-wrapper {
+                display: flex;
+                gap: 5px;
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+@media (min-width:680px) {
+    .fields-container {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (max-width:679px) {
+    .right-parent {
+        margin-top: 20px;
+    }
+}
+
+.loader-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
