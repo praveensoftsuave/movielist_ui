@@ -67,6 +67,7 @@ function CreateEditMovie() {
   }, [movieId])
 
   const handleSubmit = async (data: any) => {
+    setLoading(true);
     const payload = { ...data }
     if (movieId) {
       setSubmiting(true)
@@ -113,6 +114,7 @@ function CreateEditMovie() {
     } else {
       toast.error('Please Upload Image', defaultConfig);
     }
+    setLoading(false);
   }
 
   return (
@@ -153,10 +155,10 @@ function CreateEditMovie() {
                     }}
                   />
                   <div className="button-wrapper">
-                    <ActionButton text={"Cancel"} onClick={() => {
+                    <ActionButton type="button" text={"Cancel"} onClick={() => {
                       navigate("/movie")
                     }} disabled={submiting} />
-                    <ActionButton text={movieId ? "Update" : "Submit"} disabled={submiting} />
+                    <ActionButton type="submit" text={movieId ? "Update" : "Submit"} disabled={submiting} />
                   </div>
                 </div>
               </div>
